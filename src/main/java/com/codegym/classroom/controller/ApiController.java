@@ -3,6 +3,7 @@ package com.codegym.classroom.controller;
 import com.codegym.classroom.model.Classes;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -10,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class ApiController {
 
     @Value("${apiUr}")
@@ -32,4 +34,5 @@ public class ApiController {
         List<Classes> classes = (List<Classes>) responseEntity.getBody();
         return new ResponseEntity<>(classes, HttpStatus.OK);
     }
+
 }
