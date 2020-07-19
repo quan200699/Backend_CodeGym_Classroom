@@ -1,6 +1,7 @@
 package com.codegym.classroom.controller;
 
 import com.codegym.classroom.model.Classes;
+import com.codegym.classroom.model.Lecture;
 import com.codegym.classroom.model.Module;
 import com.codegym.classroom.model.Program;
 import com.codegym.classroom.service.api.ApiService;
@@ -46,5 +47,13 @@ public class ApiController {
         ResponseEntity<Object> responseEntity = apiService.getObjectFromAndy(uri);
         List<Module> modules = (List<Module>) responseEntity.getBody();
         return new ResponseEntity<>(modules, HttpStatus.OK);
+    }
+
+    @GetMapping("/lectures")
+    public ResponseEntity<List<Lecture>> showListLecture() {
+        final String uri = apiUrl + "/lectures";
+        ResponseEntity<Object> responseEntity = apiService.getObjectFromAndy(uri);
+        List<Lecture> lectures = (List<Lecture>) responseEntity.getBody();
+        return new ResponseEntity<>(lectures, HttpStatus.OK);
     }
 }
