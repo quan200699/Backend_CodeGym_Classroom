@@ -1,9 +1,6 @@
 package com.codegym.classroom.controller;
 
-import com.codegym.classroom.model.Classes;
-import com.codegym.classroom.model.Lecture;
-import com.codegym.classroom.model.Module;
-import com.codegym.classroom.model.Program;
+import com.codegym.classroom.model.*;
 import com.codegym.classroom.service.api.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,5 +52,13 @@ public class ApiController {
         ResponseEntity<Object> responseEntity = apiService.getObjectFromAndy(uri);
         List<Lecture> lectures = (List<Lecture>) responseEntity.getBody();
         return new ResponseEntity<>(lectures, HttpStatus.OK);
+    }
+
+    @GetMapping("/centers")
+    public ResponseEntity<List<Center>> showListCenter() {
+        final String uri = apiUrl + "/centers";
+        ResponseEntity<Object> responseEntity = apiService.getObjectFromAndy(uri);
+        List<Center> centers = (List<Center>) responseEntity.getBody();
+        return new ResponseEntity<>(centers, HttpStatus.OK);
     }
 }
