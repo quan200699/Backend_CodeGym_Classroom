@@ -16,5 +16,5 @@ public class Classroom {
 
     private String name;
 
-    private String classTime;
+    private int capacity;
 }
