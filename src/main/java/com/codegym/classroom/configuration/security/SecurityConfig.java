@@ -74,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             roleService.save(roleAdmin);
             Role roleCoach = new Role();
             roleCoach.setId(2L);
-            roleCoach.setName(RoleName.ROLE_USER.toString());
+            roleCoach.setName(RoleName.ROLE_STAFF.toString());
             roleService.save(roleCoach);
         }
         if (users.isEmpty()) {
