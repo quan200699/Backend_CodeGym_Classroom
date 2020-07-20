@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import static com.codegym.classroom.model.auth.RoleName.ROLE_USER;
+import static com.codegym.classroom.model.auth.RoleName.ROLE_STAFF;
 
 @Service
 public class UserService implements IUserService {
@@ -41,7 +41,7 @@ public class UserService implements IUserService {
     @Override
     public User save(User user) {
         if (user.getRoles() == null) {
-            Role role = roleService.findByName(ROLE_USER.toString());
+            Role role = roleService.findByName(ROLE_STAFF.toString());
             Set<Role> roles = new HashSet<>();
             roles.add(role);
             user.setRoles(roles);
