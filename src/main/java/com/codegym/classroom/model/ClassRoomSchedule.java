@@ -3,16 +3,19 @@ package com.codegym.classroom.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Date;
 
-@Data
 @Entity
-public class Classroom {
+@Data
+public class ClassRoomSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @ManyToOne
+    private Classroom classroom;
 
-    private int capacity;
+    private Long classId;
+
+    private Date createdDate;
 }
