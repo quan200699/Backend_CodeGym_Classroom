@@ -5,6 +5,7 @@ import com.codegym.classroom.repository.IClassRoomScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -24,6 +25,9 @@ public class ClassRoomScheduleService implements IClassRoomScheduleService {
 
     @Override
     public ClassRoomSchedule save(ClassRoomSchedule classRoomSchedule) {
+        long currentTime = System.currentTimeMillis();
+        Date currentDate = new Date(currentTime);
+        classRoomSchedule.setCreatedDate(currentDate);
         return classRoomScheduleRepository.save(classRoomSchedule);
     }
 
