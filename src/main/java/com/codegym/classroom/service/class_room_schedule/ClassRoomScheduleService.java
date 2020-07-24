@@ -40,4 +40,9 @@ public class ClassRoomScheduleService implements IClassRoomScheduleService {
     public Iterable<Long> getAllClassId(Long id) {
         return classRoomScheduleRepository.getAllClassId(id);
     }
+
+    @Override
+    public Iterable<Long> getAllClass() {
+        return classRoomScheduleRepository.getAllClass();
+    }
 }

@@ -49,4 +49,9 @@ public class ClassRoomScheduleController {
             return new ResponseEntity<>(classRoomSchedule, HttpStatus.OK);
         }).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+    @GetMapping("/classes")
+    public ResponseEntity<Iterable<Long>> getAllClasses() {
+        return new ResponseEntity<>(classRoomScheduleService.getAllClass(), HttpStatus.OK);
+    }
 }

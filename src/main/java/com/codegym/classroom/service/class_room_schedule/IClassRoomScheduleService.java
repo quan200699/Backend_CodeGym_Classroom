@@ -5,4 +5,5 @@ import com.codegym.classroom.service.IGeneralService;
 
 public interface IClassRoomScheduleService extends IGeneralService<ClassRoomSchedule> {
     Iterable<Long> getAllClassId(Long id);
+    Iterable<Long> getAllClass();
 }
