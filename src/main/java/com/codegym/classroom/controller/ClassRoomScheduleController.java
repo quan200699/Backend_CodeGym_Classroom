@@ -43,9 +43,9 @@ public class ClassRoomScheduleController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ClassRoomSchedule> deleteClassRoomSchedule(@PathVariable Long id) {
-        Optional<ClassRoomSchedule> classRoomScheduleOptional = classRoomScheduleService.findById(id);
+        Optional<ClassRoomSchedule> classRoomScheduleOptional = classRoomScheduleService.findByClassId(id);
         return classRoomScheduleOptional.map(classRoomSchedule -> {
-            classRoomScheduleService.remove(id);
+            classRoomScheduleService.deleteByClassId(id);
             return new ResponseEntity<>(classRoomSchedule, HttpStatus.OK);
         }).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

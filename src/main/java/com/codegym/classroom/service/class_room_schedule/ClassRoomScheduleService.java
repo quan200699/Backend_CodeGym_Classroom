@@ -45,4 +45,14 @@ public class ClassRoomScheduleService implements IClassRoomScheduleService {
     public Iterable<Long> getAllClass() {
         return classRoomScheduleRepository.getAllClass();
     }
+
+    @Override
+    public Optional<ClassRoomSchedule> findByClassId(Long classId) {
+        return classRoomScheduleRepository.findByClassId(classId);
+    }
+
+    @Override
+    public void deleteByClassId(Long classId) {
+        classRoomScheduleRepository.deleteByClassId(classId);
+    }
 }
