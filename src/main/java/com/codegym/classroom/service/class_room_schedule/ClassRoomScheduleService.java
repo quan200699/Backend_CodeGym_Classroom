@@ -35,4 +35,9 @@ public class ClassRoomScheduleService implements IClassRoomScheduleService {
     public void remove(Long id) {
         classRoomScheduleRepository.deleteById(id);
     }
+
+    @Override
+    public Iterable<Long> getAllClassId(Long id) {
+        return classRoomScheduleRepository.getAllClassId(id);
+    }
 }

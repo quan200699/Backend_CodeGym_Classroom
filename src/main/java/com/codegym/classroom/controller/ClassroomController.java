@@ -1,6 +1,7 @@
 package com.codegym.classroom.controller;
 
 import com.codegym.classroom.model.Classroom;
+import com.codegym.classroom.service.class_room_schedule.IClassRoomScheduleService;
 import com.codegym.classroom.service.classroom.IClassroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,9 @@ import java.util.Optional;
 public class ClassroomController {
     @Autowired
     private IClassroomService classroomService;
+
+    @Autowired
+    private IClassRoomScheduleService classRoomScheduleService;
 
     @GetMapping
     public ResponseEntity<Iterable<Classroom>> getAllClassroom() {
@@ -48,5 +52,13 @@ public class ClassroomController {
             classroomService.remove(id);
             return new ResponseEntity<>(classroom, HttpStatus.OK);
         }).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @GetMapping("/{id}/classes")
+    public ResponseEntity<Iterable<Long>> getAllClassesByClassroom(@PathVariable Long id) {
+        Optional<Classroom> classroomOptional = classroomService.findById(id);
+        return classroomOptional.map(classroom ->
+                new ResponseEntity<>(classRoomScheduleService.getAllClassId(classroom.getId()), HttpStatus.OK)).
+                orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
