@@ -23,7 +23,7 @@ public class ClassRoomScheduleController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ClassRoomSchedule> getClassRoomSchedule(@PathVariable Long id) {
-        Optional<ClassRoomSchedule> classRoomScheduleOptional = classRoomScheduleService.findById(id);
+        Optional<ClassRoomSchedule> classRoomScheduleOptional = classRoomScheduleService.findByClassId(id);
         return classRoomScheduleOptional.map(classroom -> new ResponseEntity<>(classroom, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
@@ -34,7 +34,7 @@ public class ClassRoomScheduleController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ClassRoomSchedule> updateClassRoomSchedule(@PathVariable Long id, @RequestBody ClassRoomSchedule classRoomSchedule) {
-        Optional<ClassRoomSchedule> classRoomScheduleOptional = classRoomScheduleService.findById(id);
+        Optional<ClassRoomSchedule> classRoomScheduleOptional = classRoomScheduleService.findByClassId(id);
         return classRoomScheduleOptional.map(classRoomSchedule1 -> {
             classRoomSchedule.setId(classRoomSchedule1.getId());
             return new ResponseEntity<>(classRoomScheduleService.save(classRoomSchedule), HttpStatus.OK);
