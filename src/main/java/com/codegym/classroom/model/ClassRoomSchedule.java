@@ -15,7 +15,10 @@ public class ClassRoomSchedule {
     @ManyToOne
     private Classroom classroom;
 
+    @Column(unique = true)
     private Long classId;
+
+    private Integer numberOfStudent;
 
     private Date createdDate;
 }
