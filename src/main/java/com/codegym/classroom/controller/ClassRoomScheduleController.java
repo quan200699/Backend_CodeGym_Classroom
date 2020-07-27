@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Optional;
 
 @RestController
@@ -17,8 +20,13 @@ public class ClassRoomScheduleController {
     private IClassRoomScheduleService classRoomScheduleService;
 
     @GetMapping
-    public ResponseEntity<Iterable<ClassRoomSchedule>> getAllClassRoomSchedule() {
-        return new ResponseEntity<>(classRoomScheduleService.findAll(), HttpStatus.OK);
+    public ResponseEntity<Iterable<ClassRoomSchedule>> getAllClassRoomSchedule(@RequestParam Integer month) {
+        if (month == null) {
+            Date date = new Date();
+            LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            month = localDate.getMonthValue();
+        }
+        return new ResponseEntity<>(classRoomScheduleService.getAllClassRoomScheduleByMonth(month), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

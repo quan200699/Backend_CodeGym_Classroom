@@ -37,8 +37,8 @@ public class ClassRoomScheduleService implements IClassRoomScheduleService {
     }
 
     @Override
-    public Iterable<Long> getAllClassId(Long id) {
-        return classRoomScheduleRepository.getAllClassId(id);
+    public Iterable<Long> getAllClassId(Long id, Integer month) {
+        return classRoomScheduleRepository.getAllClassId(id, month);
     }
 
     @Override
@@ -54,5 +54,10 @@ public class ClassRoomScheduleService implements IClassRoomScheduleService {
     @Override
     public void deleteByClassId(Long classId) {
         classRoomScheduleRepository.deleteByClassId(classId);
+    }
+
+    @Override
+    public Iterable<ClassRoomSchedule> getAllClassRoomScheduleByMonth(Integer month) {
+        return classRoomScheduleRepository.getAllClassRoomScheduleByMonth(month);
     }
 }

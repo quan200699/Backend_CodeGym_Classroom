@@ -8,6 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Optional;
 
 @RestController
@@ -55,10 +58,16 @@ public class ClassroomController {
     }
 
     @GetMapping("/{id}/classes")
-    public ResponseEntity<Iterable<Long>> getAllClassesByClassroom(@PathVariable Long id) {
+    public ResponseEntity<Iterable<Long>> getAllClassesByClassroom(@PathVariable Long id, @RequestParam Integer month) {
         Optional<Classroom> classroomOptional = classroomService.findById(id);
+        if (month == null) {
+            Date date = new Date();
+            LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            month = localDate.getMonthValue();
+        }
+        Integer finalMonth = month;
         return classroomOptional.map(classroom ->
-                new ResponseEntity<>(classRoomScheduleService.getAllClassId(classroom.getId()), HttpStatus.OK)).
+                new ResponseEntity<>(classRoomScheduleService.getAllClassId(classroom.getId(), finalMonth), HttpStatus.OK)).
                 orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
