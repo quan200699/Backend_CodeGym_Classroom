@@ -14,6 +14,8 @@ public class InstructorSchedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String classTime;
+
     private Long lectureId;
 
     private Long classId;
