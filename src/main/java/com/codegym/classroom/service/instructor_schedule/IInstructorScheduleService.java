@@ -7,5 +7,8 @@ import java.util.Optional;
 
 public interface IInstructorScheduleService extends IGeneralService<InstructorSchedule> {
     void deleteByClassId(Long classId);
+
     Optional<InstructorSchedule> findByClassId(Long classId);
+
+    Long getInstructorInClass(Long classId);
 }
