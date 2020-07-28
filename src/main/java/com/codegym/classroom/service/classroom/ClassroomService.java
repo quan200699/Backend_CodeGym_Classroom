@@ -31,4 +31,9 @@ public class ClassroomService implements IClassroomService {
     public void remove(Long id) {
         classroomRepository.deleteById(id);
     }
+
+    @Override
+    public Iterable<Classroom> getAllClassroomByCenter(Long centerId) {
+        return classroomRepository.getAllClassroomByCenter(centerId);
+    }
 }
