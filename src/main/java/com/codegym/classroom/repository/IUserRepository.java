@@ -1,6 +1,6 @@
 package com.codegym.classroom.repository;
 
-import com.codegym.classroom.model.auth.User;
+import com.codegym.classroom.model.entity.auth.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 package com.codegym.classroom.controller;
 
-import com.codegym.classroom.model.auth.JwtResponse;
-import com.codegym.classroom.model.auth.User;
+import com.codegym.classroom.model.entity.auth.JwtResponse;
+import com.codegym.classroom.model.entity.auth.User;
 import com.codegym.classroom.service.JwtService;
 import com.codegym.classroom.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController

@@ -1,6 +1,6 @@
 package com.codegym.classroom.service;
 
-import com.codegym.classroom.model.auth.UserPrinciple;
+import com.codegym.classroom.model.entity.auth.UserPrinciple;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

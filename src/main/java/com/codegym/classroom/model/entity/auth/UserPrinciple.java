@@ -1,4 +1,4 @@
-package com.codegym.classroom.model.auth;
+package com.codegym.classroom.model.entity.auth;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

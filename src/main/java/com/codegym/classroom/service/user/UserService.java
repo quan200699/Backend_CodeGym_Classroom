@@ -1,8 +1,8 @@
 package com.codegym.classroom.service.user;
 
-import com.codegym.classroom.model.auth.Role;
-import com.codegym.classroom.model.auth.User;
-import com.codegym.classroom.model.auth.UserPrinciple;
+import com.codegym.classroom.model.entity.auth.Role;
+import com.codegym.classroom.model.entity.auth.User;
+import com.codegym.classroom.model.entity.auth.UserPrinciple;
 import com.codegym.classroom.repository.IUserRepository;
 import com.codegym.classroom.service.role.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import static com.codegym.classroom.model.auth.RoleName.ROLE_STAFF;
+import static com.codegym.classroom.model.entity.auth.RoleName.ROLE_STAFF;
 
 @Service
 public class UserService implements IUserService {

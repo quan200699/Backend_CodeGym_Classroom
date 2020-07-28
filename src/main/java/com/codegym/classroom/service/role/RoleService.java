@@ -1,6 +1,6 @@
 package com.codegym.classroom.service.role;
 
-import com.codegym.classroom.model.auth.Role;
+import com.codegym.classroom.model.entity.auth.Role;
 import com.codegym.classroom.repository.IRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

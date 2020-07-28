@@ -1,4 +1,4 @@
-package com.codegym.classroom.model.auth;
+package com.codegym.classroom.model.entity.auth;
 
 public enum RoleName {
     ROLE_ADMIN,

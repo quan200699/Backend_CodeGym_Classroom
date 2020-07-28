@@ -1,4 +1,4 @@
-package com.codegym.classroom.model;
+package com.codegym.classroom.model.entity;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class CoachSchedule {
+public class InstructorSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

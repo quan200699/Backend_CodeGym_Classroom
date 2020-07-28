@@ -1,6 +1,6 @@
 package com.codegym.classroom.repository;
 
-import com.codegym.classroom.model.ClassRoomSchedule;
+import com.codegym.classroom.model.entity.ClassRoomSchedule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

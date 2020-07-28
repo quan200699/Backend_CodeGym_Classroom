@@ -1,4 +1,4 @@
-package com.codegym.classroom.model;
+package com.codegym.classroom.model.entity;
 
 import lombok.Data;
 

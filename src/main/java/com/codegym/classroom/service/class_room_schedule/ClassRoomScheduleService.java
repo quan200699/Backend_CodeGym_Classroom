@@ -1,6 +1,6 @@
 package com.codegym.classroom.service.class_room_schedule;
 
-import com.codegym.classroom.model.ClassRoomSchedule;
+import com.codegym.classroom.model.entity.ClassRoomSchedule;
 import com.codegym.classroom.repository.IClassRoomScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

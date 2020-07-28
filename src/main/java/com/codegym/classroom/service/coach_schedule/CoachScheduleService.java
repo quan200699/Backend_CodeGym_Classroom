@@ -1,6 +1,6 @@
 package com.codegym.classroom.service.coach_schedule;
 
-import com.codegym.classroom.model.CoachSchedule;
+import com.codegym.classroom.model.entity.CoachSchedule;
 import com.codegym.classroom.repository.ICoachScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

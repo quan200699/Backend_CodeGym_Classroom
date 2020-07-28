@@ -1,6 +1,6 @@
 package com.codegym.classroom;
 
-import com.codegym.classroom.model.Classroom;
+import com.codegym.classroom.model.entity.Classroom;
 import com.codegym.classroom.service.classroom.IClassroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

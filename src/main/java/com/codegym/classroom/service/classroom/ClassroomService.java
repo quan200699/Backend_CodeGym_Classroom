@@ -1,6 +1,6 @@
 package com.codegym.classroom.service.classroom;
 
-import com.codegym.classroom.model.Classroom;
+import com.codegym.classroom.model.entity.Classroom;
 import com.codegym.classroom.repository.IClassroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
