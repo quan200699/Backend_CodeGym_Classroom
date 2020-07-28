@@ -34,7 +34,7 @@ public class CoachScheduleController {
 
     @PutMapping("/{id}")
     public ResponseEntity<CoachSchedule> updateCoachSchedule(@PathVariable Long id, @RequestBody CoachSchedule coachSchedule) {
-        Optional<CoachSchedule> coachScheduleOptional = coachScheduleService.findById(id);
+        Optional<CoachSchedule> coachScheduleOptional = coachScheduleService.findByClassId(id);
         return coachScheduleOptional.map(coachSchedule1 -> {
             coachSchedule.setId(coachSchedule1.getId());
             return new ResponseEntity<>(coachScheduleService.save(coachSchedule), HttpStatus.OK);
@@ -43,9 +43,9 @@ public class CoachScheduleController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<CoachSchedule> deleteCoachSchedule(@PathVariable Long id) {
-        Optional<CoachSchedule> coachScheduleOptional = coachScheduleService.findById(id);
+        Optional<CoachSchedule> coachScheduleOptional = coachScheduleService.findByClassId(id);
         return coachScheduleOptional.map(coachSchedule -> {
-            coachScheduleService.remove(id);
+            coachScheduleService.deleteByClassId(id);
             return new ResponseEntity<>(coachSchedule, HttpStatus.OK);
         }).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

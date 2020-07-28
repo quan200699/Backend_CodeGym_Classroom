@@ -31,4 +31,14 @@ public class CoachScheduleService implements ICoachScheduleService {
     public void remove(Long id) {
         coachScheduleRepository.deleteById(id);
     }
+
+    @Override
+    public void deleteByClassId(Long classId) {
+        coachScheduleRepository.deleteByClassId(classId);
+    }
+
+    @Override
+    public Optional<CoachSchedule> findByClassId(Long classId) {
+        return coachScheduleRepository.findByClassId(classId);
+    }
 }
