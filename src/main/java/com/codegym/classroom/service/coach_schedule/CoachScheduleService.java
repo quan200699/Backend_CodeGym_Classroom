@@ -41,4 +41,9 @@ public class CoachScheduleService implements ICoachScheduleService {
     public Optional<CoachSchedule> findByClassId(Long classId) {
         return coachScheduleRepository.findByClassId(classId);
     }
+
+    @Override
+    public Long getCoachInClass(Long classId) {
+        return coachScheduleRepository.getCoachInClass(classId);
+    }
 }
