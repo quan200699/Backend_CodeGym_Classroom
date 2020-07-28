@@ -5,6 +5,8 @@ import com.codegym.classroom.repository.IClassRoomScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Optional;
 
@@ -53,7 +55,10 @@ public class ClassRoomScheduleService implements IClassRoomScheduleService {
 
     @Override
     public void deleteByClassId(Long classId) {
-        classRoomScheduleRepository.deleteByClassId(classId);
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int month = localDate.getMonthValue();
+        classRoomScheduleRepository.deleteByClassId(classId, month);
     }
 
     @Override

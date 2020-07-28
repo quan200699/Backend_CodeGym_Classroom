@@ -17,7 +17,8 @@ public interface IClassRoomScheduleRepository extends JpaRepository<ClassRoomSch
 
     Optional<ClassRoomSchedule> findByClassId(Long classId);
 
-    void deleteByClassId(Long classId);
+    @Query(value = "DELETE FROM classroom_management.class_room_schedule WHERE class_id = ?1 AND MONTH(created_date) = ?2", nativeQuery = true)
+    void deleteByClassId(Long classId, Integer month);
 
     @Query(value = "SELECT * FROM classroom_management.class_room_schedule WHERE MONTH(created_date) = ?1", nativeQuery = true)
     Iterable<ClassRoomSchedule> getAllClassRoomScheduleByMonth(Integer month);
