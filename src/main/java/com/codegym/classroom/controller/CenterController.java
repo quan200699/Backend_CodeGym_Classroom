@@ -14,7 +14,7 @@ public class CenterController {
     @Autowired
     private IClassroomService classroomService;
 
-    @GetMapping("/{id}/classes")
+    @GetMapping("/{id}/classrooms")
     public ResponseEntity<Iterable<Classroom>> getAllClassroomByCenter(@PathVariable Long id) {
         return new ResponseEntity<>(classroomService.getAllClassroomByCenter(id), HttpStatus.OK);
     }
