@@ -5,6 +5,7 @@ import com.codegym.classroom.service.class_room_schedule.IClassRoomScheduleServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -61,5 +62,17 @@ public class ClassRoomScheduleController {
     @GetMapping("/classes")
     public ResponseEntity<Iterable<Long>> getAllClasses() {
         return new ResponseEntity<>(classRoomScheduleService.getAllClass(), HttpStatus.OK);
+    }
+
+    @Scheduled(cron = "0 0 8 1 * *", zone = "Asia/Saigon")
+    private void saveClassRoomScheduleInfoEveryFirstDayOfMonth() {
+        Iterable<ClassRoomSchedule> classRoomSchedules = classRoomScheduleService.findAll();
+        classRoomSchedules.forEach(classRoomSchedule -> {
+            ClassRoomSchedule classRoomSchedule1 = new ClassRoomSchedule();
+            classRoomSchedule1.setClassId(classRoomSchedule.getClassId());
+            classRoomSchedule1.setClassroom(classRoomSchedule.getClassroom());
+            classRoomSchedule1.setNumberOfStudent(classRoomSchedule.getNumberOfStudent());
+            classRoomScheduleService.save(classRoomSchedule1);
+        });
     }
 }
