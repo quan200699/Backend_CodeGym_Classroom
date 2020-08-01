@@ -34,7 +34,7 @@ public class ClassController {
     }
 
     @GetMapping("/{id}/tutors")
-    public ResponseEntity<Iterable<TutorSchedule>> getTutorsInClass(@PathVariable Long id) {
+    public ResponseEntity<Iterable<Long>> getTutorsInClass(@PathVariable Long id) {
         return new ResponseEntity<>(tutorScheduleService.getTutorsInClass(id), HttpStatus.OK);
     }
 }

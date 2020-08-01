@@ -43,7 +43,7 @@ public class TutorScheduleService implements ITutorScheduleService {
     }
 
     @Override
-    public Iterable<TutorSchedule> getTutorsInClass(Long classId) {
+    public Iterable<Long> getTutorsInClass(Long classId) {
         return tutorScheduleRepository.getTutorsInClass(classId);
     }
 }

@@ -10,5 +10,5 @@ public interface ITutorScheduleService extends IGeneralService<TutorSchedule> {
 
     Optional<TutorSchedule> findByClassId(Long classId);
 
-    Iterable<TutorSchedule> getTutorsInClass(Long classId);
+    Iterable<Long> getTutorsInClass(Long classId);
 }
