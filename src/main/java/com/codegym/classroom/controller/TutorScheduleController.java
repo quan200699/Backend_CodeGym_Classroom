@@ -38,7 +38,7 @@ public class TutorScheduleController {
         return tutorScheduleOptional.map(tutorSchedule1 -> {
             tutorSchedule.setId(tutorSchedule1.getId());
             return new ResponseEntity<>(tutorScheduleService.save(tutorSchedule), HttpStatus.OK);
-        }).orElseGet(() -> new ResponseEntity<>(HttpStatus.OK));
+        }).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @DeleteMapping("/{id}")
