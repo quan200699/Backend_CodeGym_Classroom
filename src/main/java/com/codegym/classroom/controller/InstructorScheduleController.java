@@ -1,6 +1,5 @@
 package com.codegym.classroom.controller;
 
-import com.codegym.classroom.model.entity.CoachSchedule;
 import com.codegym.classroom.model.entity.InstructorSchedule;
 import com.codegym.classroom.service.instructor_schedule.IInstructorScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;

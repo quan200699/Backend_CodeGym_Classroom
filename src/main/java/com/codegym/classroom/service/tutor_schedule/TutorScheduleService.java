@@ -31,4 +31,19 @@ public class TutorScheduleService implements ITutorScheduleService {
     public void remove(Long id) {
         tutorScheduleRepository.deleteById(id);
     }
+
+    @Override
+    public void deleteByClassId(Long classId) {
+        tutorScheduleRepository.deleteByClassId(classId);
+    }
+
+    @Override
+    public Optional<TutorSchedule> findByClassId(Long classId) {
+        return tutorScheduleRepository.findByClassId(classId);
+    }
+
+    @Override
+    public Iterable<TutorSchedule> getTutorsInClass(Long classId) {
+        return tutorScheduleRepository.getTutorsInClass(classId);
+    }
 }
