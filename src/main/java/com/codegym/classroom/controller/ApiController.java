@@ -38,14 +38,6 @@ public class ApiController {
         return new ResponseEntity<>(programs, HttpStatus.OK);
     }
 
-    @GetMapping("/modules")
-    public ResponseEntity<List<Module>> showListModule() {
-        final String uri = apiUrl + "/modules";
-        ResponseEntity<Object> responseEntity = apiService.getObjectFromAndy(uri);
-        List<Module> modules = (List<Module>) responseEntity.getBody();
-        return new ResponseEntity<>(modules, HttpStatus.OK);
-    }
-
     @GetMapping("/lectures")
     public ResponseEntity<List<Lecture>> showListLecture() {
         final String uri = apiUrl + "/lectures";
