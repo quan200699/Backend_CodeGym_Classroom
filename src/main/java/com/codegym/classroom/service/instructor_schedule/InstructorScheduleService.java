@@ -23,7 +23,7 @@ public class InstructorScheduleService implements IInstructorScheduleService {
     }
 
     @Override
-    public Long getInstructorInClass(Long classId) {
+    public InstructorSchedule getInstructorInClass(Long classId) {
         return instructorScheduleRepository.getInstructorInClass(classId);
     }
 

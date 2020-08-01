@@ -1,5 +1,6 @@
 package com.codegym.classroom.controller;
 
+import com.codegym.classroom.model.entity.InstructorSchedule;
 import com.codegym.classroom.service.coach_schedule.ICoachScheduleService;
 import com.codegym.classroom.service.instructor_schedule.IInstructorScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class ClassController {
     }
 
     @GetMapping("/{id}/instructors")
-    public ResponseEntity<Long> getInstructorInClass(@PathVariable Long id) {
+    public ResponseEntity<InstructorSchedule> getInstructorInClass(@PathVariable Long id) {
         return new ResponseEntity<>(instructorScheduleService.getInstructorInClass(id), HttpStatus.OK);
     }
 }

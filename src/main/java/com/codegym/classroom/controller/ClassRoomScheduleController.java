@@ -64,7 +64,7 @@ public class ClassRoomScheduleController {
         return new ResponseEntity<>(classRoomScheduleService.getAllClass(), HttpStatus.OK);
     }
 
-    @Scheduled(cron = "0 0 8 1 * *", zone = "Asia/Saigon")
+    @Scheduled(cron = "0 0 10 1 * *", zone = "Asia/Saigon")
     private void saveClassRoomScheduleInfoEveryFirstDayOfMonth() {
         Iterable<ClassRoomSchedule> classRoomSchedules = classRoomScheduleService.findAll();
         classRoomSchedules.forEach(classRoomSchedule -> {

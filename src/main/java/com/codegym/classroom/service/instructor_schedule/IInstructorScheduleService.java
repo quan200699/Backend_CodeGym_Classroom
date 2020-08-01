@@ -10,5 +10,5 @@ public interface IInstructorScheduleService extends IGeneralService<InstructorSc
 
     Optional<InstructorSchedule> findByClassId(Long classId);
 
-    Long getInstructorInClass(Long classId);
+    InstructorSchedule getInstructorInClass(Long classId);
 }
