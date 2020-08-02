@@ -28,7 +28,7 @@ public class InstructorScheduleService implements IInstructorScheduleService {
     }
 
     @Override
-    public Iterable<Long> getAllByLectureId(Long lectureId) {
+    public Iterable<InstructorSchedule> getAllByLectureId(Long lectureId) {
         return instructorScheduleRepository.getAllByLectureId(lectureId);
     }
 

@@ -12,5 +12,5 @@ public interface IInstructorScheduleService extends IGeneralService<InstructorSc
 
     InstructorSchedule getInstructorInClass(Long classId);
 
-    Iterable<Long> getAllByLectureId(Long lectureId);
+    Iterable<InstructorSchedule> getAllByLectureId(Long lectureId);
 }
