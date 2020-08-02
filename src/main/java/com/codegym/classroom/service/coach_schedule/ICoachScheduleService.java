@@ -13,4 +13,6 @@ public interface ICoachScheduleService extends IGeneralService<CoachSchedule> {
     Long getCoachInClass(Long classId);
 
     Iterable<Long> getAllByLectureId(Long lectureId);
+
+    Integer getMaxValueCoachClass();
 }

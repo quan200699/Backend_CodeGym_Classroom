@@ -51,4 +51,9 @@ public class CoachScheduleService implements ICoachScheduleService {
     public Iterable<Long> getAllByLectureId(Long lectureId) {
         return coachScheduleRepository.getAllByLectureId(lectureId);
     }
+
+    @Override
+    public Integer getMaxValueCoachClass() {
+        return coachScheduleRepository.getMaxValueCoachClass();
+    }
 }

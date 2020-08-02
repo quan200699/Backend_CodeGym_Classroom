@@ -17,4 +17,10 @@ public interface ICoachScheduleRepository extends JpaRepository<CoachSchedule, L
     Long getCoachInClass(Long classId);
 
     Iterable<Long> getAllByLectureId(Long lectureId);
+
+    @Query(value = "Select max(total)\n" +
+            "from (Select count(class_id) as total\n" +
+            "      from classroom_management .coach_schedule\n" +
+            "      group by lecture_id) as result", nativeQuery = true)
+    Integer getMaxValueCoachClass();
 }

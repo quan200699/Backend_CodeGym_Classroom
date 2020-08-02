@@ -24,6 +24,11 @@ public class LectureController {
         return new ResponseEntity<>(coachScheduleService.getAllByLectureId(id), HttpStatus.OK);
     }
 
+    @GetMapping("/coaches/max")
+    public ResponseEntity<Integer> getAllClassesByCoach() {
+        return new ResponseEntity<>(coachScheduleService.getMaxValueCoachClass(), HttpStatus.OK);
+    }
+
     @GetMapping("/instructors/{id}/classes")
     public ResponseEntity<Iterable<Long>> getAllClassesByInstructor(@PathVariable Long id) {
         return new ResponseEntity<>(instructorScheduleService.getAllByLectureId(id), HttpStatus.OK);
