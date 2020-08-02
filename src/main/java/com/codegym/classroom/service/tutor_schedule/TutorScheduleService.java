@@ -46,4 +46,9 @@ public class TutorScheduleService implements ITutorScheduleService {
     public Iterable<Long> getTutorsInClass(Long classId) {
         return tutorScheduleRepository.getTutorsInClass(classId);
     }
+
+    @Override
+    public Iterable<TutorSchedule> getAllByLectureId(Long lectureId) {
+        return tutorScheduleRepository.getAllByLectureId(lectureId);
+    }
 }

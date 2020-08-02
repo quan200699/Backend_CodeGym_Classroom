@@ -15,4 +15,6 @@ public interface ITutorScheduleRepository extends JpaRepository<TutorSchedule, L
 
     @Query(value = "select lecture_id from classroom_management.tutor_schedule where class_id = ?1", nativeQuery = true)
     Iterable<Long> getTutorsInClass(Long classId);
+
+    Iterable<TutorSchedule> getAllByLectureId(Long lectureId);
 }
