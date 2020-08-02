@@ -1,5 +1,6 @@
 package com.codegym.classroom.controller;
 
+import com.codegym.classroom.model.entity.CoachSchedule;
 import com.codegym.classroom.model.entity.InstructorSchedule;
 import com.codegym.classroom.service.coach_schedule.ICoachScheduleService;
 import com.codegym.classroom.service.instructor_schedule.IInstructorScheduleService;
@@ -21,7 +22,7 @@ public class LectureController {
     private IInstructorScheduleService instructorScheduleService;
 
     @GetMapping("/coaches/{id}/classes")
-    public ResponseEntity<Iterable<Long>> getAllClassesByCoach(@PathVariable Long id) {
+    public ResponseEntity<Iterable<CoachSchedule>> getAllClassesByCoach(@PathVariable Long id) {
         return new ResponseEntity<>(coachScheduleService.getAllByLectureId(id), HttpStatus.OK);
     }
 
