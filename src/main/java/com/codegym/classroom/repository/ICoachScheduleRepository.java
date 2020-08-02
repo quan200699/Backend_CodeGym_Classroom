@@ -15,4 +15,6 @@ public interface ICoachScheduleRepository extends JpaRepository<CoachSchedule, L
 
     @Query(value = "select lecture_id from classroom_management.coach_schedule where class_id = ?1", nativeQuery = true)
     Long getCoachInClass(Long classId);
+
+    Iterable<Long> getAllByLectureId(Long lectureId);
 }

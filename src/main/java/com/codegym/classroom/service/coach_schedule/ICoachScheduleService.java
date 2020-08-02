@@ -11,4 +11,6 @@ public interface ICoachScheduleService extends IGeneralService<CoachSchedule> {
     Optional<CoachSchedule> findByClassId(Long classId);
 
     Long getCoachInClass(Long classId);
+
+    Iterable<Long> getAllByLectureId(Long lectureId);
 }

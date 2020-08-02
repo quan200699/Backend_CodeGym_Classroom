@@ -46,4 +46,9 @@ public class CoachScheduleService implements ICoachScheduleService {
     public Long getCoachInClass(Long classId) {
         return coachScheduleRepository.getCoachInClass(classId);
     }
+
+    @Override
+    public Iterable<Long> getAllByLectureId(Long lectureId) {
+        return coachScheduleRepository.getAllByLectureId(lectureId);
+    }
 }
