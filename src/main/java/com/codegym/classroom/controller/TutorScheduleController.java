@@ -49,4 +49,9 @@ public class TutorScheduleController {
             return new ResponseEntity<>(tutorSchedule, HttpStatus.OK);
         }).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+    @GetMapping("/free-time")
+    public ResponseEntity<Iterable<Long>> getAllTutorHasFreeTime(@RequestParam Long classroomId, @RequestParam String classTime) {
+        return new ResponseEntity<>(tutorScheduleService.getAllLectureHasFreeTime(classroomId, classTime), HttpStatus.OK);
+    }
 }

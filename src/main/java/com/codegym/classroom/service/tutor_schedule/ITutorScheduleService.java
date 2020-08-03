@@ -13,4 +13,6 @@ public interface ITutorScheduleService extends IGeneralService<TutorSchedule> {
     Iterable<Long> getTutorsInClass(Long classId);
 
     Iterable<TutorSchedule> getAllByLectureId(Long lectureId);
+
+    Iterable<Long> getAllLectureHasFreeTime(Long classroomId, String classTime);
 }
